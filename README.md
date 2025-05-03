@@ -1,4 +1,4 @@
-EX-21-POINTERS
+# EX-21-POINTERS
 # AIM:
 Write a C program to convert a 23.65 into 25 using pointer
 
@@ -9,19 +9,27 @@ Write a C program to convert a 23.65 into 25 using pointer
 4.	Print the modified value.
 
 ## PROGRAM:
+~~~
+#include <stdio.h>
+#include <math.h> // For round() if needed
+
+int main() {
+    float num = 23.65;
+    float *ptr = &num;
+
+    printf("Original value: %.2f\n", *ptr);
+
+    // Convert value to 25 using pointer
+    *ptr = 25;
+
+    printf("Modified value: %.2f\n", *ptr);
+
+    return 0;
+}
+~~~
 
 ## OUTPUT:
- 	
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/a02f50bf-05db-40ef-bb1a-a08c57dc4bc7)
 
 ## RESULT:
 Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
@@ -45,15 +53,36 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+~~~
+#include <stdio.h>
+
+// Recursive function to calculate factorial
+long long factorial(int n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int n = 12;
+    long long result = factorial(n);
+
+    printf("Product of first 12 natural numbers (12!) = %lld\n", result);
+
+    return 0;
+}
+~~~
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/2dc522ca-47f9-423a-99af-ef8643a49867)
+
          		
 ## RESULT:
 
 Thus the program has been executed successfully.
  
  
-
-
 # EX-23-ARRAYS AND ITS OPERATIONS
 
 ## AIM:
@@ -68,18 +97,51 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
+~~~
+#include <stdio.h>
+
+int main() {
+    int rows, cols;
+
+    // Input number of rows and columns
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    
+    printf("Enter number of columns: ");
+    scanf("%d", &cols);
+
+    int matrix[rows][cols];
+
+    // Input matrix elements
+    printf("Enter elements of the matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("Element [%d][%d]: ", i, j);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Find and print sum of each row
+    printf("\nSum of each row:\n");
+    for (int i = 0; i < rows; i++) {
+        int rowSum = 0;
+        for (int j = 0; j < cols; j++) {
+            rowSum += matrix[i][j];
+        }
+        printf("Sum of row %d = %d\n", i + 1, rowSum);
+    }
+}
+~~~
 
 
 
-## OUTPUT
+## OUTPUT:
 
+![image](https://github.com/user-attachments/assets/38584159-ac98-46e6-83ac-917d87d2a409)
 
+## RESULT:
+ Thus the program has been exwcuted successfully.
  
- 
-
- ## RESULT
- 
-
 
 # EX-24-STRINGS
 
@@ -96,24 +158,55 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
+~~~
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int rows, i, j, len, index = 0;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    len = strlen(str);
+
+    printf("\n");
+
+    // Outer loop for rows
+    for (i = 0; i < rows; i++) {
+        // Print spaces for pyramid shape
+        for (j = 0; j < rows - i - 1; j++) {
+            printf(" ");
+        }
+
+        // Print characters from the string
+        for (j = 0; j <= i; j++) {
+            printf("%c ", str[index]);
+            index = (index + 1) % len;  // Loop back to start if string ends
+        }
+
+        printf("\n");
+    }
+
+}
+~~~
 
 
- ## OUTPUT
+## OUTPUT:
+ ![image](https://github.com/user-attachments/assets/c91daa5c-9184-46b4-9569-dafc98583d8e)
 
  
-
 ## RESULT
 
 Thus the C program to String process executed successfully
  
 
- 
-.
-
-
-
 # EX -25 –DISPLAYING ARRAYS USING POINTERS
-## AIM
+## AIM:
 
 Write a c program to read and display an array of any 6 integer elements using pointer
 
@@ -131,7 +224,8 @@ Step 5: Loop from i = 0 to i < n:
 •	Print the element at *(parr + i) using pointer dereferencing.
 Step 6: End the program.
 
-## PROGRAM
+## PROGRAM:
+
 
 ## OUTPUT
 
