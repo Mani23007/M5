@@ -35,10 +35,7 @@ int main() {
 Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
  
  
-
-
 # EX-22-FUNCTIONS AND STORAGE CLASS
-
 ## AIM:
 
 Write a C program to calculate the Product of first 12 natural numbers using Recursion
@@ -200,17 +197,17 @@ int main() {
  ![image](https://github.com/user-attachments/assets/c91daa5c-9184-46b4-9569-dafc98583d8e)
 
  
-## RESULT
+## RESULT:
 
 Thus the C program to String process executed successfully
  
 
-# EX -25 –DISPLAYING ARRAYS USING POINTERS
+# EX -25 –DISPLAYING ARRAYS USING POINTERS:
 ## AIM:
 
 Write a c program to read and display an array of any 6 integer elements using pointer
 
-## ALGORITHM
+## ALGORITHM:
 Step 1: Start the program.
 Step 2: Declare the following:
 •	Integer variable i for iteration.
@@ -225,14 +222,37 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM:
+~~~
+#include <stdio.h>
+
+int main() {
+    int arr[6];
+    int *ptr;
+
+    // Pointer pointing to the array
+    ptr = arr;
+
+    printf("Enter 6 integer elements:\n");
+    for(int i = 0; i < 6; i++) {
+        scanf("%d", ptr + i);  // Reading using pointer
+    }
+
+    printf("The array elements are:\n");
+    for(int i = 0; i < 6; i++) {
+        printf("%d ", *(ptr + i));  // Displaying using pointer
+    }
+
+    return 0;
+}
+~~~
 
 
-## OUTPUT
+## OUTPUT:
+![image](https://github.com/user-attachments/assets/76c5d032-cdf8-4278-a838-9aa3bc7c0d85)
 
- 
 
-## RESULT
+## RESULT:
 
-Thus the C program to read and display an array of any 6 integer elements using pointer has been executed
+Thus the C program to read and display an array of any 6 integer elements using pointer has been executed.
 
 
